@@ -25,7 +25,7 @@ const Greeting: React.FC<GreetingPropsType> = (
         lastUserName,
     } // деструктуризация пропсов
 ) => {
-    const inputClass = s.errorInput ? "errorInput" : "" // need to fix with (?:) OK
+    const inputClass = error.length ? s.errorInput : "" // need to fix with (?:) OK
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
