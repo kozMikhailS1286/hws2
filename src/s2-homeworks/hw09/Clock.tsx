@@ -38,7 +38,7 @@ function Clock() {
         second: 'numeric'
     }).format(date)  || <br/> // была строка: 'date->time', часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
 
-    const stringDate = new Intl.DateTimeFormat('en-Us', {
+    const stringDate = new Intl.DateTimeFormat('ru', {
         day: 'numeric',
         month: 'numeric',
         year: 'numeric'
@@ -50,7 +50,7 @@ function Clock() {
     }).format(date) || <br/> // пишут студенты:
 
     const stringMonth = new Intl.DateTimeFormat('en-Us', {
-        month: 'numeric'
+        month: 'long'
     }).format(date) || <br/> // Была строка: 'date->month', пишут студенты
 
     return (
