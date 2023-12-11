@@ -135,5 +135,3 @@ const HW13 = () => {
 }
 
 export default HW13
-
-// https://github.com/Wooxed/hws2/blob/main/src/s2-homeworks/hw13/HW13.tsx
