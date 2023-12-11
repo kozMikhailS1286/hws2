@@ -37,12 +37,11 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-                setText(res.data)
-                setCode('')
+
             })
             .catch((e) => {
                 // дописать
-                setCode('Код 400')
+
             })
     }
 
@@ -57,7 +56,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
+                        disabled={info === '...loading'}
 
                     >
                         Send true
@@ -67,7 +66,6 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
 
                     >
                         Send false
@@ -77,7 +75,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
+                        disabled={info === '...loading'}
 
                     >
                         Send undefined
@@ -87,7 +85,8 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-                        disabled={!code}
+                        disabled={info === '...loading'}
+
                     >
                         Send null
                     </SuperButton>
