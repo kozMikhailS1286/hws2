@@ -14,7 +14,6 @@ function JuniorPlus() {
             <HW13 />
             <HW14/>
 
-
         </div>
     )
 }
