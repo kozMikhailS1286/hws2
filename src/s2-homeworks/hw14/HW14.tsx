@@ -53,7 +53,7 @@ const HW14 = () => {
 
         // добавить/заменить значение в квери урла
         // setSearchParams(
-            setSearchParams(value) // мое.
+            setSearchParams(" ") // мое.
         //
     }
 
