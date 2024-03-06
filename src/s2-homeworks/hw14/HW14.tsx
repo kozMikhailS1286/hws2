@@ -40,6 +40,7 @@ const HW14 = () => {
                 // сохранить пришедшие данные
                 if (res) {                               // мое
                     setTechs(res.data.techs)
+
                     setLoading(false)
                 }
                 //
