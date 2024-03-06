@@ -50,10 +50,14 @@ const HW14 = () => {
     const onChangeText = (value: string) => {
         setFind(value)
         // делает студент
+        if (value) { // мое
 
         // добавить/заменить значение в квери урла
         // setSearchParams(
-            setSearchParams(" ") // мое.
+            const findQuery = value ? {find: value}: ''
+            setSearchParams(findQuery) // мое.
+            console.log(value)
+        }
         //
     }
 
