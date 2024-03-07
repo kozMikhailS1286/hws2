@@ -10,9 +10,9 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 * 1 - дописать SuperPagination
 * 2 - дописать SuperSort
 * 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
-* 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW15 в HW5/pages/JuniorPlus
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15 OK
+* 4 - сделать стили в соответствии с дизайном OK-
+* 5 - добавить HW15 в HW5/pages/JuniorPlus OK
 * */
 
 type TechType = {
@@ -52,9 +52,11 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                if (res) { // Моё
                 // сохранить пришедшие данные
-
+                    setTechs(res.data.techs)    // Моё
+                    setLoading(false)
+                }
                 //
             })
     }
@@ -63,11 +65,16 @@ const HW15 = () => {
         // делает студент
 
         // setPage(
+        setPage(newPage)  // Моё
+
         // setCount(
+        setCount(newCount) // Моё
 
         // sendQuery(
-        // setSearchParams(
+        sendQuery(newCount) // Моё
 
+        // setSearchParams(
+        setSearchParams() // Моё
         //
     }
 
@@ -75,11 +82,15 @@ const HW15 = () => {
         // делает студент
 
         // setSort(
+        setSort(newSort)    // Моё
         // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setPage(1) // Моё
 
         // sendQuery(
-        // setSearchParams(
+        sendQuery(newSort)    // Моё
 
+        // setSearchParams(
+        setSearchParams() // Моё
         //
     }
 
