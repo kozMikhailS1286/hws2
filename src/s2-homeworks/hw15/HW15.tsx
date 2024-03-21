@@ -55,23 +55,30 @@ const HW15 = () => {
                 if (res) { // Моё
                 // сохранить пришедшие данные
                     setTechs(res.data.techs)    // Моё
+                    setTotalCount(res.data.totalCount)
                     setLoading(false)
                 }
                 //
             })
     }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
+    console.log({page, count, totalCount})
 
+    const onChangeCount = (newCount: number) => {
+        setCount(newCount);
+        sendQuery({count: newCount, page, sort})
+    }
+
+    const onChangePagination = (newPage: number) => {
         // setPage(
-        setPage(newPage)  // Моё
+        setPage(newPage);
+        sendQuery({count, page: newPage, sort})
 
         // setCount(
-        setCount(newCount) // Моё
+       // setCount(newCount) // Моё
 
         // sendQuery(
-        sendQuery(newCount) // Моё
+       // sendQuery(newCount) // Моё
 
         // setSearchParams(
         setSearchParams() // Моё
@@ -112,7 +119,6 @@ const HW15 = () => {
             </div>
         </div>
     ))
-
     return (
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
@@ -125,6 +131,7 @@ const HW15 = () => {
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
+                    onChangeCount={onChangeCount}
                 />
 
                 <div className={s.rowHeader}>
