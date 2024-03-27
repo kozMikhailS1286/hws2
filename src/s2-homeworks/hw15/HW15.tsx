@@ -10,9 +10,9 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 * 1 - дописать SuperPagination
 * 2 - дописать SuperSort
 * 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
-* 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW15 в HW5/pages/JuniorPlus
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15 OK
+* 4 - сделать стили в соответствии с дизайном OK-
+* 5 - добавить HW15 в HW5/pages/JuniorPlus OK
 * */
 
 // https://github.com/egaletsky/hws2/blob/main/src/s2-homeworks/hw15/HW15.tsx
@@ -54,42 +54,36 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
-                // Мой код ниже:
-                if (res) {
+                if (res) { // Моё
                 // сохранить пришедшие данные
-                    setTechs(res.data.techs)
+                    setTechs(res.data.techs)    // Моё
                     setTotalCount(res.data.totalCount)
                     setLoading(false)
                 }
-                // Мой код выше.
+                //
             })
     }
 
-    const onChangePagination = (newPage: number, newCount: number) => {
-        // делает студент
+    console.log({page, count, totalCount})
 
+    const onChangeCount = (newCount: number) => {
+        setCount(newCount);
+        sendQuery({count: newCount, page, sort})
+    }
 
+    const onChangePagination = (newPage: number) => {
         // setPage(
-        // Мой код ниже:
-        setPage(newPage)
-        // Мой код выше.
+        setPage(newPage);
+        sendQuery({count, page: newPage, sort})
 
         // setCount(
-        // Мой код ниже:
-        setCount(newCount)
-        // Мой код выше.
+       // setCount(newCount) // Моё
 
         // sendQuery(
-        // Мой код ниже:
-        sendQuery({page: newPage, count: newCount, sort:sort})
-        // Мой код выше.
+       // sendQuery(newCount) // Моё
 
         // setSearchParams(
-        // Мой код ниже:
-        setSearchParams()
-        // Мой код выше.
-
+        setSearchParams() // Моё
         //
     }
 
@@ -97,24 +91,15 @@ const HW15 = () => {
         // делает студент
 
         // setSort(
-        // Мой код ниже:
-        setSort(newSort)
-        // Мой код выше.
-
+        setSort(newSort)    // Моё
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-        // Мой код ниже:
-        setPage(1)
-        // Мой код выше.
+        setPage(1) // Моё
 
         // sendQuery(
-        // Мой код ниже:
-        sendQuery({sort:newSort, count: count, page:1})
-        // Мой код выше.
+        sendQuery(newSort)    // Моё
 
         // setSearchParams(
-        // Мой код ниже:
-        setSearchParams()
-        // Мой код выше.
+        setSearchParams() // Моё
         //
     }
 
@@ -136,7 +121,6 @@ const HW15 = () => {
             </div>
         </div>
     ))
-
     return (
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
@@ -149,6 +133,7 @@ const HW15 = () => {
                     itemsCountForPage={count}
                     totalCount={totalCount}
                     onChange={onChangePagination}
+                    onChangeCount={onChangeCount}
                 />
 
                 <div className={s.rowHeader}>
