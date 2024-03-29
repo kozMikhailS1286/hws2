@@ -74,11 +74,12 @@ const HW15 = () => {
     const onChangePagination = (newPage: number) => {
         // setPage(
         setPage(newPage);
-        // sendQuery({count, page: newPage, sort})
+        sendQuery({count, page: newPage, sort})
 
         // setCount(
 
         // sendQuery(
+
 
         // setSearchParams(
         setSearchParams() // Моё
