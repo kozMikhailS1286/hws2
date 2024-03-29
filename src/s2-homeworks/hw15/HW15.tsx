@@ -73,7 +73,7 @@ const HW15 = () => {
 
 
         // setSearchParams(
-        setSearchParams() // Моё
+        setSearchParams(sort) // Моё
         //
     }
     const onChangeSort = (newSort: string) => {
