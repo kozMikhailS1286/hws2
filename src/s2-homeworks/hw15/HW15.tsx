@@ -96,7 +96,7 @@ const HW15 = () => {
         setPage(1) // Моё
 
         // sendQuery(
-        sendQuery(newSort)    // Моё
+        sendQuery({sort, count, page })    // Моё
 
         // setSearchParams(
         setSearchParams() // Моё
